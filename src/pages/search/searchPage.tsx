@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 
-const API_KEY = "b5042270c7fe25205db449aa28311112"; // Ganti dengan API Key TMDB
+const API_KEY = "b5042270c7fe25205db449aa28311112";
 const BASE_URL = "https://api.themoviedb.org/3";
 
 const SearchPage: React.FC = () => {

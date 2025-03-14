@@ -8,7 +8,6 @@ export const getTrending = async (page: number) => {
     );
 
     if (response.data) {
-      // Batasi hanya 8 film yang ditampilkan
       response.data.results = response.data.results.slice(0, 10);
       return response.data as ResponseData;
     }

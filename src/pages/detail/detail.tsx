@@ -6,7 +6,6 @@ import { useDetail } from "../hooks/useDetail";
 const Detail: React.FC = () => {
   const { id } = useParams();
 
-  // Ambil data detail film dari API
   const { movie, loading, error } = useDetail(`movie/${id}?language=en-US`);
 
   if (loading)

@@ -15,13 +15,13 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
   return (
     <div className="relative w-full h-[500px]">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]} // Tambahkan Autoplay
+        modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
         loop={true}
         autoplay={{
-          delay: 3000, // Waktu jeda antar slide (ms)
-          disableOnInteraction: false, // Tetap autoplay meskipun diinteraksi
+          delay: 3000,
+          disableOnInteraction: false,
         }}
         className="w-full h-full"
       >

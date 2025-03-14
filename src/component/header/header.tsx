@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Untuk navigasi ke halaman pencarian
+import { useNavigate } from "react-router-dom";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -7,16 +7,16 @@ import {
 } from "@heroicons/react/24/solid";
 
 const navData = [
-  { route: "/home", label: "Home" },
-  { route: "/movies", label: "Movies" },
-  { route: "/tv", label: "TV Shows" },
+  { route: "/", label: "Home" },
+  { route: "#", label: "Movies" },
+  { route: "#", label: "TV Shows" },
 ];
 
 const Header: React.FC = () => {
   const [toggle, setToggle] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [search, setSearch] = useState("");
-  const navigate = useNavigate(); // Untuk navigasi ke halaman pencarian
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,8 +39,8 @@ const Header: React.FC = () => {
         isScrolled ? "bg-[#0d0233] shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="text-white flex justify-between items-center px-10 py-5 w-full max-w-[1440px] mx-auto relative">
-        <h2 className="text-blue-50 font-bold italic text-3xl">MovieApp</h2>
+      <div className="text-blue-200 flex justify-between items-center px-10 py-5 w-full max-w-[1440px] mx-auto relative">
+        <h2 className="text-blue-200 font-bold italic text-3xl">MovieApp</h2>
 
         <nav className="hidden md:flex gap-10">
           {navData.map((item) => (
@@ -54,10 +54,9 @@ const Header: React.FC = () => {
           ))}
         </nav>
 
-        {/* 🔍 Form Pencarian */}
         <form
           onSubmit={handleSearch}
-          className="hidden md:flex items-center bg-white rounded-lg overflow-hidden"
+          className="hidden md:flex items-center bg-blue-50 rounded-lg overflow-hidden"
         >
           <input
             type="text"
@@ -70,15 +69,15 @@ const Header: React.FC = () => {
             type="submit"
             className="px-3 py-2 bg-gray-700 hover:bg-gray-600 transition"
           >
-            <MagnifyingGlassIcon className="h-5 w-5 text-white" />
+            <MagnifyingGlassIcon className="h-5 w-5 text-blue-200" />
           </button>
         </form>
 
         <button onClick={() => setToggle(!toggle)} className="md:hidden">
           {toggle ? (
-            <XMarkIcon className="h-7 w-7" />
+            <XMarkIcon className="h-7 w-7 text-blue-200" />
           ) : (
-            <Bars3Icon className="h-7 w-7" />
+            <Bars3Icon className="h-7 w-7 text-blue-200" />
           )}
         </button>
 
@@ -93,7 +92,7 @@ const Header: React.FC = () => {
                 {item.label}
               </a>
             ))}
-            {/* Input Pencarian untuk Mobile */}
+
             <form
               onSubmit={handleSearch}
               className="flex items-center bg-white rounded-lg overflow-hidden w-3/4"
@@ -109,7 +108,7 @@ const Header: React.FC = () => {
                 type="submit"
                 className="px-3 py-2 bg-gray-700 hover:bg-gray-600 transition"
               >
-                <MagnifyingGlassIcon className="h-5 w-5 text-white" />
+                <MagnifyingGlassIcon className="h-5 w-5 text-blue-200" />
               </button>
             </form>
           </nav>
